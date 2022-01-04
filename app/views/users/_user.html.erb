@@ -8,4 +8,15 @@
     <strong>Birthday:</strong>
     <%= user.birthday %>
   </p>
+  <p>
+  <strong>Born:</strong>
+  <%= (Date.today - user.birthday.to_date).to_i %> days ago
+  </p>
+  <p>
+  Like being born at <%= (Time.now-((Date.today - user.birthday.to_date).to_i)).strftime("%l:%M:%S%p") %>
+  </p>
+  <p>and dying at <%= (Time.now-((Date.today - user.birthday.to_date).to_i)+29200).strftime("%l:%M:%S%p") %>
+  </p>
+  <%# days in 80 years = 29200 %>
+  <%# seconds in 8 hours = 28800 %>
   </div>
