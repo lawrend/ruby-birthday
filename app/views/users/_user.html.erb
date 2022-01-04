@@ -1,10 +1,12 @@
 <div id="<%= dom_id user %>">
   <p>
-    <strong>Name:</strong>
+  <h2>
     <%= user.name %>
+  </h2>
   </p>
 
-  <p>
+
+  <p class="birthday">
     <strong>Birthday:</strong>
     <%= user.birthday %>
   </p>
@@ -17,6 +19,8 @@
   </p>
   <p>and dying at <%= (Time.now-((Date.today - user.birthday.to_date).to_i)+29200).strftime("%l:%M:%S%p") %>
   </p>
+  <p>It is now <%= Time.now.strftime("%l:%M:%S%p") %></p>
+  <p>You have <strong><%= (((Time.now-((Date.today - user.birthday.to_date).to_i)+29200) - Time.now)/3600).round(2) %> </strong>hours of your 8-hour life remaining </p>
   <%# days in 80 years = 29200 %>
   <%# seconds in 8 hours = 28800 %>
   </div>
